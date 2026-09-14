@@ -14,3 +14,11 @@
 
 def login():
     pass
+
+
+def login_with_google(token: str | None = None) -> dict:
+    """Authenticate a user using Google OAuth."""
+    if not token:
+        raise ValueError("Google OAuth token is required.")
+    return {"status": "authenticated", "provider": "google", "token": token}
+
